@@ -1,0 +1,6 @@
+@ConsistencyHub_HostAddress = http://localhost:5148
+
+GET {{ConsistencyHub_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
