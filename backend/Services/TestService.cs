@@ -1,14 +1,16 @@
+using ConsistencyHub.Models;
 using MongoDB.Driver;
-using backend.Models;
+using Microsoft.Extensions.Options;
 
-namespace backend.Services
+namespace ConsistencyHub.Services
 {
     public class TestService
     {
         private readonly IMongoCollection<Test> _tests;
 
-        public TestService(MongoDbSettings settings)
+        public TestService(IOptions<MongoDbSettings> mongoDbSettings)
         {
+            var settings = mongoDbSettings.Value;
             var client = new MongoClient(settings.ConnectionString);
             var database = client.GetDatabase(settings.DatabaseName);
             _tests = database.GetCollection<Test>("Tests");

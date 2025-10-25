@@ -1,7 +1,7 @@
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
-namespace backend.Models
+namespace ConsistencyHub.Models
 {
     public class Test
     {

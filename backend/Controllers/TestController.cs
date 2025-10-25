@@ -1,19 +1,14 @@
 using Microsoft.AspNetCore.Mvc;
-using backend.Models;
-using backend.Services;
+using ConsistencyHub.Models;
+using ConsistencyHub.Services;
 
-namespace backend.Controllers
+namespace ConsistencyHub.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class TestController : ControllerBase
+    public class TestController(TestService testService) : ControllerBase
     {
-        private readonly TestService _testService;
-
-        public TestController(TestService testService)
-        {
-            _testService = testService;
-        }
+        private readonly TestService _testService = testService;
 
         [HttpGet]
         public async Task<IActionResult> Get()
