@@ -37,7 +37,6 @@ builder.Services.AddCors(options =>
               .AllowAnyMethod());
 });
 
-var app = builder.Build();
 var jwtSection = configuration.GetSection("Jwt");
 var key = jwtSection.GetValue<string>("Key");
 var issuer = jwtSection.GetValue<string>("Issuer");
@@ -90,11 +89,12 @@ builder.Services.AddSwaggerGen(c =>
             {
                 Reference = new OpenApiReference { Id = "Bearer", Type = ReferenceType.SecurityScheme }
             },
-            new string[] {}
+            Array.Empty<string>()
         }
     });
 });
 
+var app = builder.Build();
 
 // ensure indexes on startup
 using (var scope = app.Services.CreateScope())

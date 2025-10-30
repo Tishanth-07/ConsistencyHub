@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ConsistencyHub")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ae9813966ca1c4bb43380bdc965e97c5a15824f8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e3bb25625857deb295813a8b4f266c34b116ff54")]
 [assembly: System.Reflection.AssemblyProductAttribute("ConsistencyHub")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ConsistencyHub")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

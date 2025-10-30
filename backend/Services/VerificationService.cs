@@ -5,16 +5,11 @@ using System.Threading.Tasks;
 
 namespace ConsistencyHub.Services
 {
-    public class VerificationService : IVerificationService
+    public class VerificationService(IMongoContext context) : IVerificationService
     {
-        private readonly IMongoCollection<VerificationCode> _codes;
+        private readonly IMongoCollection<VerificationCode> _codes = context.Database.GetCollection<VerificationCode>("verification_codes");
 
-        public VerificationService(IMongoContext context)
-        {
-            _codes = context.Database.GetCollection<VerificationCode>("verification_codes");
-        }
-
-        private string Generate6DigitCode()
+        private static string Generate6DigitCode()
         {
             var r = new Random();
             return r.Next(100000, 999999).ToString();
