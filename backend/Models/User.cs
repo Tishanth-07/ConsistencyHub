@@ -7,17 +7,24 @@ namespace ConsistencyHub.Models
 {
     public class User
     {
-        [BsonId]
-        [BsonRepresentation(BsonType.ObjectId)]
-        public required string Id { get; set; }
+       [BsonId]
+        [BsonRepresentation(BsonType.String)]
+        public string Id { get; set; } = Guid.NewGuid().ToString();
 
+        [BsonElement("FirstName")]
         public required string Firstname { get; set; }
+        
+        [BsonElement("LastName")]
         public required string Lastname { get; set; }
-        public required string Email { get; set; }
 
+        [BsonElement("Email")]
+        public required string Email { get; set; }
+        
+        [BsonElement("PasswordHash")]
         // hashed password (BCrypt)
         public required string PasswordHash { get; set; }
-
+        
+        [BsonElement("EmailVerified")]
         // Whether email verified
         public bool EmailVerified { get; set; } = false;
 

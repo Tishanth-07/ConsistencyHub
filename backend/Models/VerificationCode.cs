@@ -13,9 +13,8 @@ namespace ConsistencyHub.Models
     public class VerificationCode
     {
         [BsonId]
-        [BsonRepresentation(BsonType.ObjectId)]
-        public required string Id { get; set; }
-
+        [BsonRepresentation(BsonType.String)]
+        public string Id { get; set; } = Guid.NewGuid().ToString();
         public required string Email { get; set; }
         public required string Code { get; set; }
         public CodePurpose Purpose { get; set; }
