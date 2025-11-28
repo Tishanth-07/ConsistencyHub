@@ -16,7 +16,6 @@ builder.Services.Configure<MongoDbSettings>(
     builder.Configuration.GetSection("MongoDbSettings"));
 
 // Register your service
-builder.Services.AddSingleton<TestService>();
 builder.Services.AddSingleton<IMongoContext, MongoContext>();
 builder.Services.AddSingleton<IUserService, UserService>();
 builder.Services.AddSingleton<IVerificationService, VerificationService>();
