@@ -8,32 +8,35 @@ obj/
 **/bin/
 **/obj/
 
-# Rider / JetBrains
-.idea/
-
-# VS Code
-.vscode/
-
 # Visual Studio
+.vs/
 *.suo
 *.user
 *.userosscache
 *.sln.docstates
+
+# Rider / JetBrains
+.idea/
+*.ReSharper
+_ReSharper*/
+
+# VS Code
+.vscode/
 
 # Build artifacts
 *.dll
 *.pdb
 *.cache
 *.exe
+*.nupkg
+*.snupkg
 *.appx
 *.msix
 *.msixbundle
-*.nupkg
 
-# NuGet packages
-*.nuspec
+# NuGet
 packages/
-*.snupkg
+*.nuspec
 
 # Logs
 *.log
@@ -49,14 +52,14 @@ ScaffoldingReadMe.txt
 .dotnet/
 
 # Publish outputs
-*/publish/
 publish/
+*/publish/
+*/bin/Release/
+*/bin/Debug/
 
-# Temporary files
+# Temp files
 *.tmp
 *.temp
-
-# Backup files
 *.bak
 
 # Test results
@@ -65,25 +68,12 @@ TestResults/
 *.coverage
 *.coveragexml
 
-# Entity Framework Migrations (generated)
+# Entity Framework
 Migrations/ __EFMigrationsHistory
-
-# Azure
-.local.settings.json
-
-# Resharper
-_ReSharper*/
-*.ReSharper
-
-# Rider
-.idea/
 
 # IIS Express
 iisexpress/
 *.vspscc
-
-# Visual Studio working folder
-.vs/
 
 # Windows image cache
 Thumbs.db
@@ -92,23 +82,55 @@ ehthumbs.db
 # macOS
 .DS_Store
 
-# Node (if full-stack with React/Angular)
-node_modules/
-npm-debug.log
-yarn-debug.log
-yarn-error.log
+# ======================================
+#  AppSettings (Secrets Protection)
+# ======================================
+# DO NOT PUSH SECRETS to GitHub
+appsettings.Production.json
+appsettings.Local.json
+appsettings.Secret.json
+
+# If Development appsettings contains secrets, uncomment below
+# appsettings.Development.json
+
+# Azure local settings
+.local.settings.json
 
 # dotenv configs (never push secrets)
 *.env
 *.env.production
 *.env.development
+*.env.local
 
-# Backup metadata
+# ======================================
+# Frontend (Angular)
+# ======================================
+
+# Node
+node_modules/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+pnpm-debug.log
+
+# Angular build
+dist/
+out-tsc/
+.angular/
+
+# Angular cache
+.angular/cache/
+
+# Editor files
 *.orig
 
 # ======================================
-#  OPTIONAL: If your backend is in /backend/
+#  OPTIONAL: If backend is inside backend/
 # ======================================
 backend/bin/
 backend/obj/
 backend/publish/
+
+# ======================================
+# END
+# ======================================
