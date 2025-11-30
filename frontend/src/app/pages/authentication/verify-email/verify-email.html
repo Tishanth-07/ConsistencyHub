@@ -1,0 +1,22 @@
+<section class="form-card">
+  <h2>Verify your email</h2>
+  <p *ngIf="email">A 6-digit code was sent to <strong>{{ email }}</strong></p>
+
+  <form (ngSubmit)="verify()">
+    <div class="form-row">
+      <label>Code</label>
+      <input formControlName="code" />
+    </div>
+
+    <div *ngIf="error"><small class="error">{{ error }}</small></div>
+    <div *ngIf="message"><small class="helper" style="color:green">{{ message }}</small></div>
+
+    <div class="form-row">
+      <button type="submit">Verify</button>
+    </div>
+  </form>
+
+  <div class="form-row">
+    <button (click)="resend()">Resend code</button>
+  </div>
+</section>

@@ -1,0 +1,25 @@
+<section class="form-card">
+  <h2>Sign in</h2>
+
+  <form (ngSubmit)="submit()">
+    <div class="form-row">
+      <label>Email</label>
+      <input formControlName="email" />
+    </div>
+
+    <div class="form-row">
+      <label>Password</label>
+      <input type="password" formControlName="password" />
+    </div>
+
+    <div *ngIf="error"><small class="error">{{ error }}</small></div>
+
+    <div class="form-row"><button type="submit">Login</button></div>
+  </form>
+
+  <div class="links">
+    <a routerLink="/forgot-password">Forgot password?</a>
+    <div class="center helper">Or sign in with Google</div>
+    <div class="google-container"><app-google-signin></app-google-signin></div>
+  </div>
+</section>

@@ -1,0 +1,38 @@
+<section class="form-card">
+  <h2 class="title">Create an account</h2>
+
+  <form (ngSubmit)="submit()">
+    <div class="form-row">
+      <label>First name</label>
+      <input formControlName="firstname" [formControl]="form.controls['firstname']" />
+      <small *ngIf="form.controls['firstname'].invalid && form.controls['firstname'].touched" class="error">Required</small>
+    </div>
+
+    <div class="form-row">
+      <label>Last name</label>
+      <input formControlName="lastname" />
+    </div>
+
+    <div class="form-row">
+      <label>Email</label>
+      <input formControlName="email" />
+      <small *ngIf="form.controls['email'].invalid && form.controls['email'].touched" class="error">Enter a valid email</small>
+    </div>
+
+    <div class="form-row">
+      <label>Password</label>
+      <input type="password" formControlName="password" />
+      <small class="helper">Min 6 chars, 1 uppercase, 1 number, 1 symbol</small>
+      <small *ngIf="form.controls['password'].invalid && form.controls['password'].touched" class="error">Invalid password</small>
+    </div>
+
+    <div *ngIf="error" class="form-row"><small class="error">{{ error }}</small></div>
+
+    <div class="form-row">
+      <button type="submit" [disabled]="loading">Register</button>
+    </div>
+
+    <div class="center helper">Or sign in with Google</div>
+    <div class="google-container"><app-google-signin></app-google-signin></div>
+  </form>
+</section>

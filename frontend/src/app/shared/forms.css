@@ -1,0 +1,15 @@
+.form-card {
+  border: 1px solid #e0e0e0;
+  padding: 20px;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+}
+.form-row { margin-bottom: 12px; }
+label { display:block; font-weight:600; margin-bottom:6px; }
+input, button { padding: 10px; font-size: 14px; width: 100%; box-sizing: border-box; }
+button { cursor:pointer; background:#1976d2; color:white; border:none; border-radius:6px; }
+small.error { color:#b00020; }
+.helper { color:#666; font-size:13px; margin-top:6px; }
+.center { text-align:center; }
+.google-container { margin-top:12px; }
